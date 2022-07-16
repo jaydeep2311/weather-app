@@ -1,0 +1,22 @@
+.daily-forecast {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5%;
+}
+.box {
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  height: 25vh;
+  justify-content: center;
+  box-shadow: 3px 3px 3px 3px whitesmoke;
+}
+.box:hover {
+  border: 2px solid #3ab4f2;
+}
+.day {
+  font-weight: bold;
+}
+.night {
+  color: grey;
+}

@@ -1,0 +1,203 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "worldcities": [
+    {
+      "city": "New Delhi",
+      "city_ascii": "New Delhi",
+      "lat": 28.6139,
+      "lng": 77.209,
+      "country": "India",
+      "iso2": "IN",
+      "iso3": "IND",
+      "admin_name": "Delhi",
+      "capital": "primary",
+      "population": 249998,
+      "id": 1356215164
+    },
+    {
+      "city": "Ahmedabad",
+      "city_ascii": "Ahmedabad",
+      "lat": 23.03,
+      "lng": 72.58,
+      "country": "India",
+      "iso2": "IN",
+      "iso3": "IND",
+      "admin_name": "Gujarāt",
+      "capital": "minor",
+      "population": 7717000,
+      "id": 1356304381
+    },
+    {
+      "city": "Mumbai",
+      "city_ascii": "Mumbai",
+      "lat": 19.0758,
+      "lng": 72.8775,
+      "country": "India",
+      "iso2": "IN",
+      "iso3": "IND",
+      "admin_name": "Mahārāshtra",
+      "capital": "admin",
+      "population": 22186000,
+      "id": 1356226629
+    },
+    {
+      "city": "Panaji",
+      "city_ascii": "Panaji",
+      "lat": 15.48,
+      "lng": 73.83,
+      "country": "India",
+      "iso2": "IN",
+      "iso3": "IND",
+      "admin_name": "Goa",
+      "capital": "admin",
+      "population": 40017,
+      "id": 1356909212
+    },
+    {
+      "city": "Jaipur",
+      "city_ascii": "Jaipur",
+      "lat": 26.9167,
+      "lng": 75.8667,
+      "country": "India",
+      "iso2": "IN",
+      "iso3": "IND",
+      "admin_name": "Rājasthān",
+      "capital": "admin",
+      "population": 3073350,
+      "id": 1356293537
+    },
+    {
+      "city": "Vishākhapatnam",
+      "city_ascii": "Vishakhapatnam",
+      "lat": 17.7333,
+      "lng": 83.3167,
+      "country": "India",
+      "iso2": "IN",
+      "iso3": "IND",
+      "admin_name": "Andhra Pradesh",
+      "capital": null,
+      "population": 2035922,
+      "id": 1356692563
+    },
+    {
+      "city": "Hyderābād",
+      "city_ascii": "Hyderabad",
+      "lat": 17.3617,
+      "lng": 78.4747,
+      "country": "India",
+      "iso2": "IN",
+      "iso3": "IND",
+      "admin_name": "Telangana",
+      "capital": "admin",
+      "population": 9840000,
+      "id": 1356871768
+    },
+    {
+      "city": "Chandīgarh",
+      "city_ascii": "Chandigarh",
+      "lat": 30.7353,
+      "lng": 76.7911,
+      "country": "India",
+      "iso2": "IN",
+      "iso3": "IND",
+      "admin_name": "Chandīgarh",
+      "capital": "admin",
+      "population": 1026459,
+      "id": 1356739179
+    },
+    {
+      "city": "Kolkāta",
+      "city_ascii": "Kolkata",
+      "lat": 22.5727,
+      "lng": 88.3639,
+      "country": "India",
+      "iso2": "IN",
+      "iso3": "IND",
+      "admin_name": "West Bengal",
+      "capital": "admin",
+      "population": 18698000,
+      "id": 1356060520
+    },
+    {
+      "city": "Rānchi",
+      "city_ascii": "Ranchi",
+      "lat": 23.3556,
+      "lng": 85.3347,
+      "country": "India",
+      "iso2": "IN",
+      "iso3": "IND",
+      "admin_name": "Jharkhand",
+      "capital": "admin",
+      "population": 1073440,
+      "id": 1356110588
+    },
+    {
+      "city": "Indore",
+      "city_ascii": "Indore",
+      "lat": 22.7206,
+      "lng": 75.8472,
+      "country": "India",
+      "iso2": "IN",
+      "iso3": "IND",
+      "admin_name": "Madhya Pradesh",
+      "capital": null,
+      "population": 1994397,
+      "id": 1356402812
+    },
+    {
+      "city": "Bhopāl",
+      "city_ascii": "Bhopal",
+      "lat": 23.25,
+      "lng": 77.4167,
+      "country": "India",
+      "iso2": "IN",
+      "iso3": "IND",
+      "admin_name": "Madhya Pradesh",
+      "capital": "admin",
+      "population": 1798218,
+      "id": 1356734039
+    },
+    {
+      "city": "Lucknow",
+      "city_ascii": "Lucknow",
+      "lat": 26.847,
+      "lng": 80.947,
+      "country": "India",
+      "iso2": "IN",
+      "iso3": "IND",
+      "admin_name": "Uttar Pradesh",
+      "capital": "admin",
+      "population": 3382000,
+      "id": 1356891790
+    },
+    {
+      "city": "Āīzawl",
+      "city_ascii": "Aizawl",
+      "lat": 23.7333,
+      "lng": 92.7167,
+      "country": "India",
+      "iso2": "IN",
+      "iso3": "IND",
+      "admin_name": "Mizoram",
+      "capital": "admin",
+      "population": 293416,
+      "id": 1356342768
+    }
+  ]
+}

@@ -3,6 +3,7 @@ import "./App.css";
 import { useEffect, useState } from "react";
 import $ from "jquery";
 import Lists from "./Components/Lists/Lists";
+import Select from "react-select";
 
 function App() {
   const [location, setlocation] = useState([]);
@@ -23,6 +24,9 @@ function App() {
             );
           }
           ipLookUp();
+          fetch("http://localhost:3004/worldcities")
+            .then((res) => res.json())
+            .then((res) => console.log(res));
         },
         function error(error_message) {
           // for when getting location results in an error
@@ -54,12 +58,22 @@ function App() {
                   d="M256 0C153.755 0 70.573 83.182 70.573 185.426c0 126.888 165.939 313.167 173.004 321.035 6.636 7.391 18.222 7.378 24.846 0 7.065-7.868 173.004-194.147 173.004-321.035C441.425 83.182 358.244 0 256 0zm0 278.719c-51.442 0-93.292-41.851-93.292-93.293S204.559 92.134 256 92.134s93.291 41.851 93.291 93.293-41.85 93.292-93.291 93.292z"
                 ></path>
               </svg>
-              <input
-                type="text"
+              <Select
+                // value={{value:}}
+                onChange={(e) => console.log(e)}
+                options={[
+                  { value: "ahmedabad", label: "ahmedabad" },
+                  { value: "mumbai", label: "mumbai" },
+                ]}
+              />
+              {/* <select
                 className="Searchinput"
                 value={location ? location : ""}
                 onChange={(e) => setlocation(e.target.value)}
-              />
+              >
+                <option value="Mumbai">Mumbai</option>
+                <option value="Ahmedabad">Ahmedabad</option>
+              </select> */}
               <button data-v-da0eae2c="" className="SearchButton">
                 <svg
                   data-v-da0eae2c=""
