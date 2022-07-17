@@ -11,6 +11,7 @@ export class ApexChart extends React.Component {
 
     this.state = {
       location: [],
+      dailytemps: [],
       series: [
         {
           name: "Desktops",
@@ -32,8 +33,8 @@ export class ApexChart extends React.Component {
           curve: "straight",
         },
         title: {
-          text: "Product Trends by Month",
-          align: "left",
+          text: "",
+          align: "center",
         },
         grid: {
           row: {
@@ -53,6 +54,10 @@ export class ApexChart extends React.Component {
             "4PM",
           ],
         },
+        yaxis: {
+          categories: ["20", "21", "22", "23", "24", "25", "26", "27"],
+          show: true,
+        },
       },
     };
   }
@@ -70,6 +75,18 @@ export class ApexChart extends React.Component {
           console.log(res);
           this.setState({
             location: res,
+          });
+          var temps = [];
+          for (var i = 0; i <= 5; i++) {
+            temps.push((res.hourly[i].temp / 10).toFixed(3));
+          }
+          this.setState({
+            series: [
+              {
+                name: "Temperature",
+                data: temps,
+              },
+            ],
           });
         });
     }
