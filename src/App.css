@@ -8,7 +8,14 @@ svg:not(:root) {
   height: 40vmin;
   pointer-events: none;
 }
-
+.y-scroll-disabled {
+  overflow-x: hidden;
+}
+.option {
+  text-align: left;
+  font-weight: bold;
+  overflow-y: inherit;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -47,6 +54,7 @@ svg:not(:root) {
   display: flex;
   align-items: center;
   position: relative;
+  width: 100%;
   margin-bottom: 1.5rem;
   padding-top: 10%;
 }
@@ -64,7 +72,7 @@ svg:not(:root) {
   border: none;
   position: absolute;
   right: 9rem;
-  top: 1rem;
+  top: 0.5rem;
   margin: 0;
 }
 button,

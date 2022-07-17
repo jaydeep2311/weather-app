@@ -1,0 +1,68 @@
+@import url("https://cdn.syncfusion.com/ej2/material.css");
+#chart {
+  width: 500px;
+  height: 500px;
+}
+.temp {
+  font-size: 100px;
+}
+.weather-icon-1 {
+  width: 50px;
+  height: 50px;
+}
+.card {
+  height: 150vh;
+  margin-top: 5%;
+}
+img {
+  width: 80px;
+  height: 80px;
+}
+.left-box {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 2%;
+}
+.property {
+  font-weight: bold;
+  margin-top: 1%;
+}
+.blue-box {
+  width: 200px;
+  height: 80px;
+  background-color: #e8f9fd;
+  margin-left: 25%;
+  border-radius: 10px;
+}
+.sunrise {
+  display: flex;
+  align-items: flex-start;
+}
+.sunset {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.content {
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 20%;
+}
+.content > h5 {
+  font-weight: bold;
+}
+.content > p {
+  color: grey;
+}
+.blue-box > p {
+  font-weight: bold;
+}
+.chart-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10%;
+}
+.blue {
+  margin-top: -10%;
+}

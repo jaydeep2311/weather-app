@@ -4,9 +4,11 @@ import { useEffect, useState } from "react";
 import $ from "jquery";
 import Lists from "./Components/Lists/Lists";
 import Select from "react-select";
+import { ApexChart } from "./Components/Details/Details";
 
 function App() {
   const [location, setlocation] = useState([]);
+  const [cities, setcities] = useState([]);
   useEffect(() => {
     if ("geolocation" in navigator) {
       navigator.geolocation.getCurrentPosition(
@@ -14,7 +16,12 @@ function App() {
           function ipLookUp() {
             $.ajax("http://ip-api.com/json").then(
               function success(response) {
-                setlocation([response.city, response.country]);
+                setlocation({
+                  value: response.city,
+                  admin_name: response.state,
+                  lat: position.coords.latitude,
+                  lng: position.coords.longitude,
+                });
                 console.log(location);
               },
 
@@ -26,7 +33,16 @@ function App() {
           ipLookUp();
           fetch("http://localhost:3004/worldcities")
             .then((res) => res.json())
-            .then((res) => console.log(res));
+            .then((res) => {
+              var output = [];
+              for (var i = 0; i < res.length; i++) {
+                res[i]["label"] = res[i].value + " " + res[i].admin_name;
+                output.push(res[i]);
+                console.log(res[i]);
+              }
+              setcities(output);
+            });
+          console.log(cities);
         },
         function error(error_message) {
           // for when getting location results in an error
@@ -60,11 +76,10 @@ function App() {
               </svg>
               <Select
                 // value={{value:}}
-                onChange={(e) => console.log(e)}
-                options={[
-                  { value: "ahmedabad", label: "ahmedabad" },
-                  { value: "mumbai", label: "mumbai" },
-                ]}
+                onChange={(e) => setlocation(e)}
+                options={cities}
+                className="option"
+                defaultValue={location ? location.value : ""}
               />
               {/* <select
                 className="Searchinput"
@@ -91,6 +106,13 @@ function App() {
         </div>
         <div className="row">
           <Lists location={location}></Lists>
+        </div>
+      </div>
+      <div className="container">
+        <div className="row">
+          <div className="col">
+            <ApexChart location={location}></ApexChart>
+          </div>
         </div>
       </div>
     </div>
