@@ -62,13 +62,14 @@ export class ApexChart extends React.Component {
     };
   }
   componentDidUpdate(prevProps, prevState) {
+    var api_key = "4d886172c1895e4091a5d922ec7ed531";
     console.log("hellllo", this.props.location);
     if (
       prevProps.location &&
       prevProps.location.value != this.props.location.value
     ) {
       var data = fetch(
-        `https://api.openweathermap.org/data/2.5/onecall?lat=${this.props.location.lat}&lon=${this.props.location.lng}&exclude=minutely&appid=4d886172c1895e4091a5d922ec7ed531`
+        `https://api.openweathermap.org/data/2.5/onecall?lat=${this.props.location.lat}&lon=${this.props.location.lng}&exclude=minutely&appid=${api_key}`
       )
         .then((res) => res.json())
         .then((res) => {

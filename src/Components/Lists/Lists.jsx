@@ -10,8 +10,9 @@ const Lists = ({ location }) => {
   const [curweather, setcurweather] = useState([]);
   const days = ["Fri", "Sat", "Sun", "Mon", "Tue"];
   useEffect(() => {
+    var api_key = "4d886172c1895e4091a5d922ec7ed531";
     var data = fetch(
-      `https://api.openweathermap.org/data/2.5/onecall?lat=${location.lat}&lon=${location.lng}&exclude=minutely&appid=4d886172c1895e4091a5d922ec7ed531`
+      `https://api.openweathermap.org/data/2.5/onecall?lat=${location.lat}&lon=${location.lng}&exclude=minutely&appid=${api_key}`
     )
       .then((res) => res.json())
       .then((res) => {
