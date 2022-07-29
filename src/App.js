@@ -1439,7 +1439,7 @@ function App() {
               <svg
                 data-v-da0eae2c=""
                 viewBox="0 0 512 512"
-                className="SearchIcon IconPosition"
+                className="SearchIcon IconPosition icon"
               >
                 <path
                   data-v-da0eae2c=""

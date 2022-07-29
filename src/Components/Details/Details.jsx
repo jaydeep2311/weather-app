@@ -4,18 +4,39 @@ import "./Details.css";
 import Sun from "../../Images/sun.png";
 import Clouds from "../../Images/cloudy-day.png";
 import Rain from "../../Images/rainy-day.png";
+import ApexChart1 from "../Detail1/Details";
 
 export class ApexChart extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
+      sunrise: "",
+      sunset: "",
+      time: new Date().toLocaleTimeString(),
       location: [],
       dailytemps: [],
       series: [
         {
           name: "Desktops",
           data: [10, 41, 35, 51, 49, 62, 69, 91, 148],
+        },
+      ],
+      options1: {
+        chart: {
+          id: "basic-bar",
+        },
+        stroke: {
+          curve: "smooth",
+        },
+        xaxis: {
+          categories: [],
+        },
+      },
+      series1: [
+        {
+          name: "Time",
+          data: [],
         },
       ],
       options: {
@@ -61,6 +82,9 @@ export class ApexChart extends React.Component {
       },
     };
   }
+  componentDidMount() {
+    console.log(this.props);
+  }
   componentDidUpdate(prevProps, prevState) {
     var api_key = "4d886172c1895e4091a5d922ec7ed531";
     console.log("hellllo", this.props.location);
@@ -75,12 +99,26 @@ export class ApexChart extends React.Component {
         .then((res) => {
           console.log(res);
           this.setState({
+            sunrise: new Date(res.current.sunrise).toLocaleTimeString(),
+            sunset: new Date(res.current.sunset).toLocaleTimeString(),
+          });
+          this.setState({
             location: res,
           });
           var temps = [];
           for (var i = 0; i <= 5; i++) {
             temps.push((res.hourly[i].temp / 10).toFixed(3));
           }
+          let options1 = {
+            ...this.state.options1,
+            xaxis: {
+              categories: [
+                new Date(res.current.sunrise).toLocaleTimeString(),
+                this.state.time,
+                new Date(res.current.sunset).toLocaleTimeString(),
+              ],
+            },
+          };
           this.setState({
             series: [
               {
@@ -88,6 +126,17 @@ export class ApexChart extends React.Component {
                 data: temps,
               },
             ],
+            series1: [
+              {
+                name: "Time",
+                data: [
+                  new Date(res.current.sunrise).toLocaleTimeString(),
+                  this.state.time,
+                  new Date(res.current.sunset).toLocaleTimeString(),
+                ],
+              },
+            ],
+            options1: options1,
           });
         });
     }
@@ -165,11 +214,25 @@ export class ApexChart extends React.Component {
                     <p>7:22 Am</p>
                   </span>
                 </div>
+
                 <div className="col-md-6 sunset">
                   <span className="content">
                     <h5>Sunset</h5>
+
                     <p>6:12 pm</p>
                   </span>
+                </div>
+                <div className="row">
+                  <div className="col chart-card">
+                    <div id="chart">
+                      <ReactApexChart
+                        options={this.state.options1}
+                        series={this.state.series1}
+                        type="line"
+                        height={350}
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
