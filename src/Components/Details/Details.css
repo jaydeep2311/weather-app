@@ -11,8 +11,10 @@
   height: 50px;
 }
 .card {
-  height: 150vh;
+  height: 230vh;
   margin-top: 5%;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px 5px whitesmoke;
 }
 img {
   width: 80px;

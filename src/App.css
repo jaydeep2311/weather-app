@@ -60,10 +60,13 @@ svg:not(:root) {
 }
 .IconPosition[data-v-da0eae2c] {
   position: absolute;
-  left: 7rem;
-  top: 1rem;
+  left: 20rem;
+  top: 2rem;
 }
 .SearchIcon[data-v-da0eae2c] {
+  position: absolute;
+  right: 12rem;
+  top: 0.5rem;
   height: 1.25rem;
   width: 1.25rem;
 }
@@ -85,11 +88,35 @@ textarea {
   line-height: 1.15;
   margin: 0;
 }
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.option {
+  width: 700px;
+  height: 50px;
+  border-radius: 3px;
+  padding: 20px;
+  padding-left: 60px;
+}
+
+.city-name {
+  width: 700px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid whitesmoke;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.5rem;
+  margin-left: 0px;
+  -webkit-animation: SearchList_slideIn--data-v-da0eae2c 0.5s;
+  animation: SearchList_slideIn--data-v-da0eae2c 0.5s;
+}
+.DropdownContainer {
+  margin-left: 205px;
+  background: white;
+  position: absolute;
+  border-radius: 5px;
+  height: 500px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 1;
 }

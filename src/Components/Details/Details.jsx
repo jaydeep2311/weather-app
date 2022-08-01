@@ -208,27 +208,27 @@ export class ApexChart extends React.Component {
                     </p>
                   </div>
                 </div>
-                <div className="col-md-6 sunrise">
-                  <span className="content">
-                    <h5>Sunrise</h5>
-                    <p>7:22 Am</p>
-                  </span>
-                </div>
-
-                <div className="col-md-6 sunset">
-                  <span className="content">
-                    <h5>Sunset</h5>
-
-                    <p>6:12 pm</p>
-                  </span>
-                </div>
                 <div className="row">
+                  <div className="col-md-6 sunrise">
+                    <span className="content">
+                      <h5>Sunrise</h5>
+                      <p>7:22 Am</p>
+                    </span>
+                  </div>
+
+                  <div className="col-md-6 sunset">
+                    <span className="content">
+                      <h5>Sunset</h5>
+
+                      <p>6:12 pm</p>
+                    </span>
+                  </div>
                   <div className="col chart-card">
                     <div id="chart">
                       <ReactApexChart
                         options={this.state.options1}
                         series={this.state.series1}
-                        type="line"
+                        type="area"
                         height={350}
                       />
                     </div>

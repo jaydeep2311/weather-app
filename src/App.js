@@ -5,10 +5,11 @@ import $ from "jquery";
 import Lists from "./Components/Lists/Lists";
 import Select from "react-select";
 import { ApexChart } from "./Components/Details/Details";
+import Sun from "./../src/Images/sun.png";
+import clouds from "./../src/Images/cloudy-day.png";
+import rains from "./../src/Images/rainy-day.png";
 
 function App() {
-  const [location, setlocation] = useState([]);
-  const [cities, setcities] = useState([]);
   let worldcities = [
     {
       value: "New Delhi",
@@ -1381,6 +1382,9 @@ function App() {
       lng: "79.15",
     },
   ];
+  const [location, setlocation] = useState([]);
+  const [cities, setcities] = useState([]);
+  const [citieslist, setcitieslist] = useState([]);
 
   useEffect(() => {
     if ("geolocation" in navigator) {
@@ -1430,6 +1434,25 @@ function App() {
       console.log("geolocation is not enabled on this browser");
     }
   }, []);
+  let timerId;
+  function debounce(cbfunc, delay) {
+    if (timerId) {
+      clearTimeout(timerId);
+    }
+    timerId = setTimeout(() => {
+      cbfunc();
+    }, delay);
+  }
+  async function main() {
+    var val = document.getElementById("inputval").value;
+
+    if (val) {
+      var arr1 = await worldcities.filter((el) => el.value.includes(val));
+      setcitieslist(arr1);
+    } else {
+      setcitieslist([]);
+    }
+  }
   return (
     <div className="App">
       <div className="container">
@@ -1446,13 +1469,43 @@ function App() {
                   d="M256 0C153.755 0 70.573 83.182 70.573 185.426c0 126.888 165.939 313.167 173.004 321.035 6.636 7.391 18.222 7.378 24.846 0 7.065-7.868 173.004-194.147 173.004-321.035C441.425 83.182 358.244 0 256 0zm0 278.719c-51.442 0-93.292-41.851-93.292-93.293S204.559 92.134 256 92.134s93.291 41.851 93.291 93.293-41.85 93.292-93.291 93.292z"
                 ></path>
               </svg>
-              <Select
+              <input
                 // value={{value:}}
-                onChange={(e) => setlocation(e)}
-                options={cities}
+                type="text"
+                id="inputval"
                 className="option"
-                defaultValue={location ? location.value : ""}
+                onChange={() => debounce(main, 1000)}
               />
+              <section className="DropdownContainer">
+                {citieslist.length > 0
+                  ? citieslist.map((el, i) => {
+                      return (
+                        <div
+                          className="city-name"
+                          onClick={() => {
+                            setlocation(el);
+                            document.getElementById("inputval").innerText = "";
+                            debounce(main, 1000);
+                          }}
+                        >
+                          <span>{el.value}</span>
+                          <span>
+                            <img
+                              src={
+                                i % 2 == 0 ? Sun : i % 3 == 0 ? clouds : rains
+                              }
+                              alt=""
+                              style={{
+                                width: "50px",
+                                height: "50px",
+                              }}
+                            />
+                          </span>
+                        </div>
+                      );
+                    })
+                  : ""}
+              </section>
               {/* <select
                 className="Searchinput"
                 value={location ? location : ""}
@@ -1465,7 +1518,7 @@ function App() {
                 <svg
                   data-v-da0eae2c=""
                   viewBox="0 0 511.999 511.999"
-                  className="SearchIcon"
+                  className="SearchIcon "
                 >
                   <path
                     data-v-da0eae2c=""
