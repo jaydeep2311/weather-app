@@ -1483,7 +1483,10 @@ function App() {
                         <div
                           className="city-name"
                           onClick={() => {
+                            console.log(el);
                             setlocation(el);
+                            setcitieslist([]);
+                            document.getElementById("inputval").value = "";
                             document.getElementById("inputval").innerText = "";
                             debounce(main, 1000);
                           }}

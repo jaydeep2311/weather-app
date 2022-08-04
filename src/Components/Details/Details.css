@@ -52,6 +52,7 @@ img {
 }
 .content > h5 {
   font-weight: bold;
+  margin-top: 10%;
 }
 .content > p {
   color: grey;

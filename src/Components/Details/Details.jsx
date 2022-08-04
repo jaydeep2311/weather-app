@@ -209,15 +209,25 @@ export class ApexChart extends React.Component {
                   </div>
                 </div>
                 <div className="row">
-                  <div className="col-md-6 sunrise">
-                    <span className="content">
+                  <div className="col-md-6 ">
+                    <span
+                      className="content "
+                      style={{
+                        marginLeft: "10%",
+                      }}
+                    >
                       <h5>Sunrise</h5>
                       <p>7:22 Am</p>
                     </span>
                   </div>
 
-                  <div className="col-md-6 sunset">
-                    <span className="content">
+                  <div className="col-md-6 ">
+                    <span
+                      className="content"
+                      style={{
+                        marginRight: "10%",
+                      }}
+                    >
                       <h5>Sunset</h5>
 
                       <p>6:12 pm</p>
